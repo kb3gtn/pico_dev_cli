@@ -38,7 +38,7 @@ mkdir build
 cd build
 cmake ../
 make -j8
-cp picotool ../../../pico_tools/bin
+cp picotool ../../../tools/bin
 
 # Build JimTCL for the system
 echo "** Building JimTCL for OpenOCD **"
