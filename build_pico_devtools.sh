@@ -42,6 +42,7 @@ cd build
 cmake ../
 make -j8
 cp picotool ../../../tools/bin
+cd ..
 
 # Build JimTCL for the system
 echo "** Building JimTCL for OpenOCD **"
