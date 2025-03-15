@@ -21,7 +21,7 @@ mkdir -p ${basedir}/tools
 #need for openocd build..
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:${basedir}/tools/lib/pkgconfig"
 
-# Pull pico_sdk
+# Pull pico-sdk
 echo "** Pulling RP Pico SDK **"
 git clone https://github.com/raspberrypi/pico-sdk.git pico-sdk
 cd pico-sdk
@@ -68,7 +68,7 @@ cat << EOF > env_setup.sh
 #!/bin/bash
 # source env_setup.sh 
 export PICO_BASE=${basedir}
-export PICO_SDK_PATH=${PICO_BASE}/pico_sdk
+export PICO_SDK_PATH=${PICO_BASE}/pico-sdk
 export PATH=$PATH:${PICO_BASE}/pico_tools/bin
 export PICOTOOL_FETCH_FROM_GIT_PATH=${PICO_BASE}/builds/picotool_build
 EOF
