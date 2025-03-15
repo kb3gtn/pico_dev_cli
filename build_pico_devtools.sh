@@ -84,9 +84,9 @@ cat << EOF > env_setup.sh
 #!/bin/bash
 # source env_setup.sh 
 export PICO_BASE=${basedir}
-export PICO_SDK_PATH=${PICO_BASE}/pico-sdk
-export PATH=$PATH:${PICO_BASE}/pico_tools/bin
-export PICOTOOL_FETCH_FROM_GIT_PATH=${PICO_BASE}/builds/picotool_build
+export PICO_SDK_PATH=${basedir}/pico-sdk
+export PATH=$PATH:${basedir}/tools/bin
+export PICOTOOL_FETCH_FROM_GIT_PATH=${basedir}/builds/picotool_build
 EOF
 
 # Install cross-compiler 
