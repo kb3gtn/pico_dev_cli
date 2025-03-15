@@ -31,7 +31,10 @@ cd ..
 mkdir builds
 cd builds
 
-echo "** build PICOTools **"
+# need PICO_SDK_PATH set for Picotool to build
+export PICO_SDK_PATH=${basedir}/pico-sdk
+
+echo "** build PICOTool **"
 git clone https://github.com/raspberrypi/picotool.git picotool_build
 cd picotool_build
 mkdir build
