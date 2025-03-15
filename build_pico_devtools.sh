@@ -48,6 +48,7 @@ cmake ../
 make -j8
 cp picotool ../../../tools/bin
 cd ..
+cd ..
 
 # Build JimTCL for the system
 echo 
