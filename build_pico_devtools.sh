@@ -6,6 +6,7 @@ basedir="$PWD"
 echo "Using basedir = ${basedir}"
 
 # Include Dependency packages
+echo "******************************"
 echo "** Apt install dependencies **"
 if [  -n "$(uname -a | grep Ubuntu)" ]; then
     sudo apt install automake autoconf build-essential texinfo libtool libhidapi-dev libusb-1.0-0-dev
@@ -22,6 +23,8 @@ mkdir -p ${basedir}/tools
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:${basedir}/tools/lib/pkgconfig"
 
 # Pull pico-sdk
+echo
+echo "*************************"
 echo "** Pulling RP Pico SDK **"
 git clone https://github.com/raspberrypi/pico-sdk.git pico-sdk
 cd pico-sdk
@@ -34,6 +37,8 @@ cd builds
 # need PICO_SDK_PATH set for Picotool to build
 export PICO_SDK_PATH=${basedir}/pico-sdk
 
+echo 
+echo "********************"
 echo "** build PICOTool **"
 git clone https://github.com/raspberrypi/picotool.git picotool_build
 cd picotool_build
@@ -45,6 +50,8 @@ cp picotool ../../../tools/bin
 cd ..
 
 # Build JimTCL for the system
+echo 
+echo "*********************************"
 echo "** Building JimTCL for OpenOCD **"
 git clone https://github.com/msteveb/jimtcl.git jimtcl_build
 cd jimtcl_build
@@ -54,6 +61,8 @@ make install
 cd ..
 
 # Build OpenOCD
+echo
+echo "****************************"
 echo "** Pull and build OpenOCD **"
 git clone git://git.code.sf.net/p/openocd/code openocd_build
 cd openocd_build
@@ -67,7 +76,9 @@ cd ..
 cd ..
 
 # Create enviroment variables script
-echo "** creating env_setup.sh -- source this to set environment variables.."
+echo
+echo "***************************"
+echo "** creating env_setup.sh **"
 cat << EOF > env_setup.sh
 #!/bin/bash
 # source env_setup.sh 
@@ -78,6 +89,8 @@ export PICOTOOL_FETCH_FROM_GIT_PATH=${PICO_BASE}/builds/picotool_build
 EOF
 
 # Install cross-compiler 
+echo
+echo "********************************"
 echo "** Install arm cross compiler **"
 echo " Need to do manual install if not already installed before building stuff.. "
 echo " Arch Distros:"
@@ -86,7 +99,13 @@ echo ""
 echo " Ubuntu/Debian Distros:"
 echo "   binutils-arm-none-eabi gcc-arm-none-eabi newlib-arm-none-eabi gdb-multiarch"
 echo ""
-
+echo "**********************************************"
+echo
+echo "****************"
 echo "** UDEV Rules **"
 echo " install 99-picotool.rules /etc/udev/rules.d then reboot"
+echo
+echo "!!!!!!!!!!!!!!!!!!!!!!!"
 echo "!! Script Complete.. !!"
+echo "!!!!!!!!!!!!!!!!!!!!!!!"
+
