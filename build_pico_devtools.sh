@@ -60,7 +60,7 @@ echo "** creating env_setup.sh -- source this to set environment variables.."
 cat << EOF > env_setup.sh
 #!/bin/bash
 # source env_setup.sh 
-export PICO_BASE=/home/kb3gtn/sandbox/rp_pico_projects
+export PICO_BASE=${basedir}
 export PICO_SDK_PATH=${PICO_BASE}/pico_sdk
 export PATH=$PATH:${PICO_BASE}/pico_tools/bin
 EOF
