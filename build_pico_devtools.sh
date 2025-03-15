@@ -65,7 +65,7 @@ cd ..
 echo
 echo "****************************"
 echo "** Pull and build OpenOCD **"
-git clone git://git.code.sf.net/p/openocd/code openocd_build
+git clone https://github.com/raspberrypi/openocd.git openocd_build
 cd openocd_build
 ./bootstrap
 ./configure --enable-cmsis-dap --prefix=${basedir}/tools --disable-werror
