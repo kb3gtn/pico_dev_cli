@@ -35,7 +35,7 @@ copy 99-picotools.rules to /etc/udev/rules.d
 
 ### Package Dependencies for builds
 
-On Ubuntu/Debian distros:
+On Ubuntu/Debian distros:   
   sudo apt install binutils-arm-none-eabi gcc-arm-none-eabi newlib-arm-none-eabi gdb-multiarch cmake build-essential git libhidapi-dev libusb-1.0-0-dev
   
 For Arch base distros:    
