@@ -33,11 +33,11 @@ For debugging use can use the pico_debug_server / pico2_debug_server to create a
 ### udev rules
 copy 99-picotools.rules to /etc/udev/rules.d  
 
-### install arm compiler
+### Package Dependencies for builds
 
-You will need to install the arm compiler (arm-none-eabi) compile your self.    
-On Ubuntu/Debian distros a built in option is:    
-  sudo apt install binutils-arm-none-eabi gcc-arm-none-eabi newlib-arm-none-eabi gdb-multiarch   
-For Arch base distros a built in options is:    
-  sudo pacman -Sarm-none-eabi-binutls, arm-none-eabi-gcc arm-none-eabi-gdb arm-none-eabi-newlib   
+On Ubuntu/Debian distros:
+  sudo apt install binutils-arm-none-eabi gcc-arm-none-eabi newlib-arm-none-eabi gdb-multiarch cmake build-essential git libhidapi-dev libusb-1.0-0-dev
+  
+For Arch base distros:    
+  sudo pacman -S arm-none-eabi-binutils arm-none-eabi-gcc arm-none-eabi-gdb arm-none-eabi-newlib cmake git hidapi libusb
 
